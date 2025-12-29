@@ -1,5 +1,6 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/components/layout/sidebar/app-sidebar"
 import { SiteHeader } from "@/components/layout/header/site-header"
+import Main_Content from "@/components/layout/content/main_Content/main_Content"
 import {
   SidebarInset,
   SidebarProvider,
@@ -11,20 +12,16 @@ export const description = "A sidebar with a header and a search form."
 
 export default function Page() {
   return (
-    <div className="[--header-height:calc(--spacing(14))]">
-      <SidebarProvider className="flex flex-col">
+    <div className="[--header-height:calc(--spacing(14))] h-screen w-full overflow-hidden bg-gray-50">
+      
+      <SidebarProvider className="flex flex-col h-full"> 
         <SiteHeader />
-        <div className="flex flex-1">
+        <div className="flex flex-1 overflow-hidden">
           <AppSidebar />
-          <SidebarInset>
-            <div className="flex flex-1 flex-col gap-4 p-4">
-              <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-              </div>
-              <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
-            </div>
+          <SidebarInset className="flex-1 overflow-y-auto">
+             <div className="p-1">
+                <Main_Content />
+             </div>
           </SidebarInset>
         </div>
       </SidebarProvider>
