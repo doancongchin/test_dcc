@@ -13,6 +13,9 @@ const dashboardsData = [
   { id: 1, name: "test1", time: "year ago" },
   { id: 2, name: "test2", time: "year ago" },
   { id: 3, name: "test3", time: "year ago" },
+  { id: 4, name: "test4", time: "year ago" },
+  { id: 5, name: "test5", time: "year ago" },
+  { id: 6, name: "test6", time: "year ago" },
 ];
 
 export default function DashboardsSection() {
@@ -26,29 +29,29 @@ export default function DashboardsSection() {
         
         <div className="flex justify-between items-start mb-4">
           <span className="text-sm font-semibold text-gray-600 flex items-center gap-1">
-             Dashboards <GoArrowUpRight className="text-gray-400 text-[18px]"/>
+              Dashboards <GoArrowUpRight className="text-gray-400 text-[18px]"/>
           </span>
           <div className="flex gap-2">
-             <button className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600">
-               <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                     <button
-                     type="button"
-                     className="flex items-center gap-1 cursor-pointer hover:text-gray-600 select-none outline-none">
-                        {sortType} <MdKeyboardArrowDown />
-                     </button>
-                  </DropdownMenuTrigger>
-                  
-                  <DropdownMenuContent align="end" className="w-[120px]">
-                     <DropdownMenuItem onClick={() => setSortType("Last viewed")}>
-                        Last viewed
-                     </DropdownMenuItem>
-                     <DropdownMenuItem onClick={() => setSortType("Starred")}>
-                        Starred
-                     </DropdownMenuItem>
-                  </DropdownMenuContent>
-               </DropdownMenu>
-             </button>
+             
+             <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                   <button
+                   type="button"
+                   className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600 cursor-pointer select-none outline-none">
+                      {sortType} <MdKeyboardArrowDown />
+                   </button>
+                </DropdownMenuTrigger>
+                
+                <DropdownMenuContent align="end" className="w-[120px]">
+                   <DropdownMenuItem onClick={() => setSortType("Last viewed")}>
+                      Last viewed
+                   </DropdownMenuItem>
+                   <DropdownMenuItem onClick={() => setSortType("Starred")}>
+                      Starred
+                   </DropdownMenuItem>
+                </DropdownMenuContent>
+             </DropdownMenu>
+
              <button className="px-3 py-1.5 text-xs font-medium bg-[#102e52] text-white rounded hover:bg-[#0a1e36] transition-colors shadow-sm">
                 Add dashboard
              </button>
@@ -65,18 +68,18 @@ export default function DashboardsSection() {
                 </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto pr-1 space-y-1">
-           {dashboardsData.map((item) => (
-             <div key={item.id} className="group flex items-center justify-between p-2 rounded hover:bg-gray-50 cursor-pointer transition-colors">
-                
-                <div className="flex items-center gap-3">
-                    <MdStarBorder className="text-gray-300 text-lg group-hover:text-yellow-500 transition-colors" />
-                    <span className="text-sm font-medium text-gray-700">{item.name}</span>
-                </div>
+        <div className="overflow-y-auto pr-1 space-y-1 max-h-[120px] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-gray-300"> 
+            {dashboardsData.map((item) => (
+            <div key={item.id} className="group flex items-center justify-between p-2 rounded hover:bg-gray-50 cursor-pointer transition-colors">
+               
+               <div className="flex items-center gap-3">
+                  <MdStarBorder className="text-gray-300 text-lg group-hover:text-yellow-500 transition-colors" />
+                  <span className="text-sm font-medium text-gray-700">{item.name}</span>
+               </div>
 
-                <span className="text-xs text-gray-400">{item.time}</span>
-             </div>
-           ))}
+               <span className="text-xs text-gray-400">{item.time}</span>
+            </div>
+            ))}
         </div>
 
       </div>
@@ -84,26 +87,26 @@ export default function DashboardsSection() {
       <div className="md:col-span-5 bg-white rounded-lg border p-4 shadow-sm h-full flex flex-col">
           <div className="flex justify-between items-start mb-4">
             <span className="text-sm font-semibold text-gray-600">Activity</span>
-            <button className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600">
-               <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                     <button
-                     type="button"
-                     className="flex items-center gap-1 cursor-pointer hover:text-gray-600 select-none outline-none">
-                        {devices} <MdKeyboardArrowDown />
-                     </button>
-                  </DropdownMenuTrigger>
-                  
-                  <DropdownMenuContent align="end" className="w-[120px]">
-                     <DropdownMenuItem onClick={() => setDevices("Devices")}>
-                        Devices
-                     </DropdownMenuItem>
-                     <DropdownMenuItem onClick={() => setDevices("Devices2")}>
-                        Devices2
-                     </DropdownMenuItem>
-                  </DropdownMenuContent>
-               </DropdownMenu>
-             </button>
+            
+            <DropdownMenu>
+               <DropdownMenuTrigger asChild>
+                  <button
+                  type="button"
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600 cursor-pointer select-none outline-none">
+                     {devices} <MdKeyboardArrowDown />
+                  </button>
+               </DropdownMenuTrigger>
+               
+               <DropdownMenuContent align="end" className="w-[120px]">
+                  <DropdownMenuItem onClick={() => setDevices("Devices")}>
+                     Devices
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setDevices("Devices2")}>
+                     Devices2
+                  </DropdownMenuItem>
+               </DropdownMenuContent>
+            </DropdownMenu>
+
           </div>
 
           <div className="flex-1 w-full flex flex-col justify-end pb-2">

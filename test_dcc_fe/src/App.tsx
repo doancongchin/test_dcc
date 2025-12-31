@@ -1,12 +1,9 @@
-import Page from './app/dashboard/page'
+import Router from '../src/routes/index'; 
 
 function App() {
-
   return (
     <>
-      <div>
-        <Page/>
-      </div>
+      <Router />
     </>
   )
 }

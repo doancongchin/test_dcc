@@ -22,12 +22,13 @@ import { GoArrowBoth } from "react-icons/go";
 import { BiSolidNotification } from "react-icons/bi";
 import { TbDeviceSim1, TbDeviceSim2  } from "react-icons/tb";
 import type {MenuItem} from "../../../type/sidebar"
+import { Link } from "react-router-dom";
 
 
 const navItems: MenuItem[] = [
   {
     title: "Home",
-    url: "#",
+    url: "/page",
     icon: AiFillHome,
   },
   {
@@ -46,8 +47,8 @@ const navItems: MenuItem[] = [
     icon: MdCategory,
     isActive: false, 
     items: [
-      { title: "Devices", url: "#", icon: MdInsertChartOutlined },
-      { title: "Assets", url: "#", icon: MdWebAsset },
+      { title: "Devices", url: "/devices", icon: MdInsertChartOutlined },
+      { title: "Assets", url: "/assets", icon: MdWebAsset },
       { title: "Entity views", url: "#", icon: MdViewQuilt },
       { title: "Gateways", url: "#", icon: MdDeviceHub },
     ],
@@ -76,26 +77,6 @@ const navItems: MenuItem[] = [
     title: "Edge management",
     url: "#",
     icon: MdSettingsInputAntenna,
-  },
-  {
-    title: "Advanced features",
-    url: "#",
-    icon: MdBuild,
-  },
-  {
-    title: "Resources",
-    url: "#",
-    icon: MdFolder,
-  },
-  {
-    title: "Notification center",
-    url: "#",
-    icon: BiSolidNotification,
-  },
-  {
-    title: "Mobile center",
-    url: "#",
-    icon: MdSmartphone,
   },
   {
     title: "Advanced features",
@@ -150,10 +131,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         {item.items.map((subItem) => (
                           <SidebarMenuSubItem key={subItem.title}>
                             <SidebarMenuSubButton asChild size="md">
-                              <a href={subItem.url} className="flex items-center gap-2">
+                              <Link to={subItem.url} className="flex items-center gap-2">
                                 {subItem.icon && <subItem.icon className="size-4" />}
                                 <span>{subItem.title}</span>
-                              </a>
+                              </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
                         ))}
@@ -164,12 +145,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               ) : (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton size="lg" asChild>
-                    <a href={item.url}>
+                    <Link to={item.url}>
                       <item.icon className="size-4" />
                       <div className="grid flex-1 text-left text-sm leading-tight">
                         <span className="truncate text-xs">{item.title}</span>
                       </div>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               )}
