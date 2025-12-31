@@ -29,7 +29,7 @@ export default function EntitiesTable({ data, onTogglePublic, onToggleGateway }:
     <div className="flex-1 overflow-auto">
       <table className="w-full text-left border-collapse min-w-[1000px]">
         <thead className="sticky top-0 bg-white z-10 shadow-[0_1px_0_0_rgba(0,0,0,0.1)]">
-          <tr className="text-xs font-semibold text-gray-500">
+          <tr className="text-xs fot-semibold text-gray-500">
             <th className="p-4 w-12 text-center">
               <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer" />
             </th>
@@ -42,11 +42,9 @@ export default function EntitiesTable({ data, onTogglePublic, onToggleGateway }:
             <th className="p-4">Device profile</th>
             <th className="p-4">Label</th>
             {isDevice && <th className="p-4">State</th>}
-            
             <th className="p-4">Customer</th>
             <th className="p-4 text-center">Public</th>
             {isDevice && <th className="p-4 text-center">Is gateway</th>}
-            
             <th className="p-4 w-[180px]"></th>
           </tr>
         </thead>
@@ -102,7 +100,9 @@ export default function EntitiesTable({ data, onTogglePublic, onToggleGateway }:
                   <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500" title="Assign"><MdPerson size={18} /></button>
                   <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500" title="Export"><MdOutput size={18} /></button>
                   <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500" title="Reply"><MdReply size={18} /></button>
-                  <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500" title="Credentials"><MdSecurity size={18} /></button>
+                  {isDevice && (
+                    <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500" title="Credentials"><MdSecurity size={18} /></button>
+                  )}
                   <button className="p-1.5 hover:bg-gray-200 rounded text-gray-500 hover:text-red-500" title="Delete"><MdDelete size={18} /></button>
                 </div>
               </td>

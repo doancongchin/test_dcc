@@ -121,7 +121,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <CollapsibleTrigger asChild>
                       <SidebarMenuButton size="lg" tooltip={item.title}>
                         <item.icon className="size-4" />
-                        <span className="flex-1 truncate text-sm font-medium">{item.title}</span>
+                        <span className="flex-1 truncate text-sm font-bold">{item.title}</span>
                         <MdChevronRight className="ml-auto size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
@@ -133,7 +133,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                             <SidebarMenuSubButton asChild size="md">
                               <Link to={subItem.url} className="flex items-center gap-2">
                                 {subItem.icon && <subItem.icon className="size-4" />}
-                                <span>{subItem.title}</span>
+                                <span className="text-sm font-bold">{subItem.title}</span>
                               </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
@@ -148,7 +148,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <Link to={item.url}>
                       <item.icon className="size-4" />
                       <div className="grid flex-1 text-left text-sm leading-tight">
-                        <span className="truncate text-xs">{item.title}</span>
+                        <span className="truncate text-sm font-bold">{item.title}</span>
                       </div>
                     </Link>
                   </SidebarMenuButton>

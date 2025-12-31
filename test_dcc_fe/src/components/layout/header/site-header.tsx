@@ -7,11 +7,11 @@ import {
 import { Button } from "@/components/ui/button"
 import { useSidebar } from "@/components/ui/sidebar"
 import logo from '../../../assets/logo.svg';
-
 import { AiFillHome, AiTwotoneBell } from "react-icons/ai";
 import { BiFullscreen } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
 import { MdMoreVert } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar()
@@ -39,9 +39,11 @@ export function SiteHeader() {
               <span className="font-semibold text-lg text-white">ThingsBoard</span>
             </BreadcrumbItem>
 
-            <BreadcrumbItem className="flex items-center gap-1 text-white/80 hover:text-white cursor-pointer ml-15">
-              <AiFillHome size={24} />
-              <span className="text-sm font-medium">Home</span>
+            <BreadcrumbItem className="ml-15">
+              <Link to="/page" className="flex items-center gap-1 text-white/80 hover:text-white cursor-pointer">
+                  <AiFillHome size={24} />
+                  <span className="text-sm font-medium">Home</span>
+              </Link>
             </BreadcrumbItem>
 
           </BreadcrumbList>

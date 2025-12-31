@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import DevicesHeader from './devicesHeader';
-import DevicesPagination from './pagination';
-import EntitiesTable from './entitiesTable';
+import DevicesPagination from '../common/pagination';
+import EntitiesTable from '../common/entitiesTable';
+import EntitiesHeader from '../common/entitiesHeader';
 
 const dataDevices = [
   { id: 1, createdTime: "2024-09-25 15:21:29", name: "okm2n", profile: "defaultok", label: "", state: "Inactive", customer: "Public", public: false, gateway: false },
@@ -35,7 +35,7 @@ export default function Devices() {
     <div className="h-full w-full p-2">
       <div className="bg-white rounded shadow-sm border border-gray-200 flex flex-col h-full">
         
-        <DevicesHeader />
+        <EntitiesHeader title="Devices" titlefilter="Devices Filter"/>
         <div className="flex-1 overflow-hidden flex flex-col">
             <EntitiesTable 
                 data={devices} 

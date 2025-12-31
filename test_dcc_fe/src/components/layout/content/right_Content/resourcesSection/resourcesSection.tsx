@@ -33,24 +33,24 @@ export default function ResourcesSection() {
         title="Documentation" 
         items={docItems} 
       />
-      <div className="bg-white rounded-lg border p-4 shadow-sm h-[140px] flex flex-col">
-    <div className="flex justify-between items-start mb-2">
-        <span className="text-sm font-semibold text-gray-600 flex items-center gap-1">
-            Usage <GoArrowUpRight className="text-gray-300" />
-        </span>
-        <button className="flex items-center gap-1 px-2 py-1 text-[10px] font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600">
-            Entities <MdKeyboardArrowDown className="text-sm"/>
-        </button>
-    </div>
+      <div className="bg-white rounded-lg border p-2.5 shadow-sm h-[140px] flex flex-col"> 
 
-    <div className="space-y-2 pr-1">
-        <UsageRow label="Devices" current={28} total={100} percent={28} />
-        <UsageRow label="Assets" current={4} total={100} percent={4} />
-        <UsageRow label="Users" current={6} total={100} percent={6} />
-        <UsageRow label="Dashboards" current={23} total={100} percent={23} />
-        <UsageRow label="Customers" current={6} total={"∞"} percent={0} />
-    </div>
-</div>
+          <div className="flex justify-between items-center mb-1"> 
+              <span className="text-xs font-semibold text-gray-600 flex items-center gap-1">
+                  Usage <GoArrowUpRight className="text-gray-300" />
+              </span>
+              <button className="flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors text-gray-600">
+                  Entities <MdKeyboardArrowDown className="text-sm"/>
+              </button>
+          </div>
+          <div className="flex-1 flex flex-col justify-between pr-1">
+              <UsageRow label="Devices" current={28} total={100} percent={28} />
+              <UsageRow label="Assets" current={4} total={100} percent={4} />
+              <UsageRow label="Users" current={6} total={100} percent={6} />
+              <UsageRow label="Dashboards" current={23} total={100} percent={23} />
+              <UsageRow label="Customers" current={6} total={"∞"} percent={0} />
+          </div>
+      </div>
 
     </div>
   )

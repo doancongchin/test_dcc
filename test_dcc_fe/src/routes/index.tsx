@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Page from "@/app/dashboard/page"
-import Devices from "@/components/layout/enitities/devices"
-import Assets from "@/components/layout/enitities/assets"
+import Devices from "@/components/layout/enitities/devices/devices"
+import Assets from "@/components/layout/enitities/assets/assets"
 import Main_Content from "@/components/layout/content/main_Content/main_Content" // Import trang chủ
 
 export default function Router() {
