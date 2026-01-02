@@ -76,7 +76,7 @@ export default function Left_Content() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg border p-3 shadow-sm flex flex-col justify-center h-[140px]">
+      <div className="bg-white rounded-lg border p-3 shadow-sm flex flex-col justify-center items-center h-[140px]">
          <h4 className="font-semibold text-sm text-gray-700">Connect mobile app</h4>
          <div className="flex items-center gap-4">
             <div className="w-20 h-20 bg-gray-50 flex items-center justify-center rounded border border-gray-100 p-1 flex-shrink-0">

@@ -6,9 +6,6 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 
-export const iframeHeight = "800px"
-export const description = "A sidebar with a header and a search form."
-
 export default function Page() {
   return (
     <div className="[--header-height:calc(--spacing(14))] h-screen w-full overflow-hidden bg-gray-50">
@@ -16,10 +13,12 @@ export default function Page() {
         <SiteHeader />
         <div className="flex flex-1 overflow-hidden">
           <AppSidebar />
-          <SidebarInset className="flex-1 overflow-y-auto">
-             <div className="p-1">
+          
+          <SidebarInset className="flex-1 flex flex-col h-full overflow-hidden">
+             <div className="flex-1 w-full h-full overflow-hidden p-1">
                 <Outlet /> 
              </div>
+
           </SidebarInset>
         </div>
       </SidebarProvider>

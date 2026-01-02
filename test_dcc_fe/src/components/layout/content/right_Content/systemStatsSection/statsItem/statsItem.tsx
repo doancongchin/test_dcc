@@ -1,12 +1,7 @@
 import { GoArrowUpRight } from "react-icons/go";
 import { MdWarning } from "react-icons/md";
+import type { StatsItemProps } from "../../../../../../type/stats";
 
-type StatsItemProps = {
-  label: string;
-  value: number;
-  className: string;
-  hasWarning?: boolean;
-};
 
 export default function StatsItem({ 
   label, 

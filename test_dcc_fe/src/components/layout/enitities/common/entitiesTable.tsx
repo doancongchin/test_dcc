@@ -2,18 +2,8 @@ import {
   MdArrowDownward, 
   MdShare, MdPerson, MdOutput, MdReply, MdSecurity, MdDelete 
 } from 'react-icons/md';
+import type { Entity } from '../../../../type/entities';
 
-export type Entity = {
-  id: number;
-  createdTime: string;
-  name: string;
-  profile: string;
-  label: string;
-  customer: string;
-  public: boolean;
-  state?: string; 
-  gateway?: boolean; 
-};
 
 type EntitiesTableProps = {
   data: Entity[];
